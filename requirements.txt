@@ -1,9 +1,9 @@
 streamlit==1.46.1
 ultralytics==8.3.154
-opencv-python-headless==4.5.3.56
+opencv-python-headless==4.5.3.56  # Use opencv-python-headless for Python 3.11 compatibility
 pillow==11.2.1
 numpy==2.2.6
-pandas==2.3.0
-torch==2.7.1
-torchvision==0.22.1
+pandas==2.3.0  # Ensure compatibility with Python 3.11
+torch==2.1.0  # PyTorch version compatible with Python 3.11
+torchvision==0.22.1  # Ensure compatibility with PyTorch 2.1.0
 tenacity==9.1.2
