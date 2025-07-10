@@ -9,7 +9,7 @@ import pandas as pd  # Import pandas here
 model = YOLO("best.pt") 
 
 # Title for the Streamlit App
-st.title("YOLOv8 Object Detection")
+st.title("YOLOv8 Deteksi Objek - Singa dan Harimau")
 
 # Upload image
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
