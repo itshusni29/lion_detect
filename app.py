@@ -3,10 +3,6 @@ from ultralytics import YOLO
 import cv2
 from PIL import Image
 import numpy as np
-import pandas as pd  # Import pandas here
-
-# Load the YOLOv8 model
-model = YOLO("best.pt")  # Load your model
 
 # Title for the Streamlit App
 st.title("YOLOv8 Object Detection")
@@ -22,6 +18,9 @@ if uploaded_file is not None:
 
         # Convert image to a format acceptable by the model (OpenCV format)
         image_cv = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)  # Convert to BGR format for OpenCV
+
+        # Load the YOLOv8 model
+        model = YOLO("best.pt")  # Load your model
 
         # Make predictions using YOLOv8 model
         results = model(image_cv)
@@ -40,9 +39,6 @@ if uploaded_file is not None:
 
         # Convert the results to a DataFrame
         df = result.to_df()
-
-        # Extract bounding box coordinates from the 'box' column
-        df[['xmin', 'ymin', 'xmax', 'ymax']] = pd.DataFrame(df['box'].to_list(), index=df.index)
 
         # Show the DataFrame with the predicted bounding boxes and other details (like class and confidence)
         st.write("Prediction Results (Bounding boxes, Confidence, Class):")
