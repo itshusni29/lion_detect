@@ -1,6 +1,6 @@
 streamlit==1.46.1
 ultralytics==8.3.154
-opencv-python-headless==4.11.0.86 
+opencv-python-headless==4.5.3.56
 pillow==11.2.1
 numpy==2.2.6
 pandas==2.3.0
